@@ -33,7 +33,6 @@
     cursor: default;
   }
 
-  /* ── STAR FIELD ───────────────────────────────────── */
   #stars {
     position: fixed;
     inset: 0;
@@ -52,7 +51,6 @@
     50%       { opacity: var(--hi, 0.6); }
   }
 
-  /* ── GRID OVERLAY ─────────────────────────────────── */
   body::before {
     content: '';
     position: fixed;
@@ -65,7 +63,6 @@
     z-index: 0;
   }
 
-  /* ── GLOW ORBS ────────────────────────────────────── */
   .orb {
     position: fixed;
     border-radius: 50%;
@@ -90,7 +87,6 @@
     to   { transform: translate(40px, 30px); }
   }
 
-  /* ── LAYOUT ───────────────────────────────────────── */
   .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -99,7 +95,6 @@
     z-index: 1;
   }
 
-  /* ── NAV ──────────────────────────────────────────── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -138,7 +133,6 @@
   }
   .nav-cta:hover { background: var(--sky); color: var(--white); }
 
-  /* ── HERO ─────────────────────────────────────────── */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -147,9 +141,7 @@
     position: relative;
     z-index: 1;
   }
-  .hero-inner {
-    max-width: 760px;
-  }
+  .hero-inner { max-width: 760px; }
   .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -200,10 +192,7 @@
   }
   .hero-sub strong { color: var(--off); font-weight: 500; }
 
-  /* ── WAITLIST FORM ────────────────────────────────── */
-  .waitlist-wrap {
-    animation: fadeUp 0.8s 0.3s ease both;
-  }
+  .waitlist-wrap { animation: fadeUp 0.8s 0.3s ease both; }
   .tab-row {
     display: flex;
     gap: 0;
@@ -226,10 +215,7 @@
     transition: all 0.2s;
     text-transform: uppercase;
   }
-  .tab-btn.active {
-    background: var(--sky);
-    color: var(--white);
-  }
+  .tab-btn.active { background: var(--sky); color: var(--white); }
   .tab-btn:not(.active):hover { color: var(--sky); }
 
   .form-card {
@@ -292,8 +278,6 @@
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.2s;
-    position: relative;
-    overflow: hidden;
   }
   .submit-btn:hover {
     background: var(--glow);
@@ -314,10 +298,7 @@
     text-align: center;
     padding: 32px;
   }
-  .success-msg .check {
-    font-size: 2.5rem;
-    margin-bottom: 12px;
-  }
+  .success-msg .check { font-size: 2.5rem; margin-bottom: 12px; }
   .success-msg h3 {
     font-family: 'Syne', sans-serif;
     font-size: 1.2rem;
@@ -326,7 +307,6 @@
   }
   .success-msg p { font-size: 0.9rem; color: var(--muted); }
 
-  /* ── STATS ────────────────────────────────────────── */
   .stats {
     padding: 80px 0;
     border-top: 1px solid var(--border);
@@ -361,7 +341,6 @@
     line-height: 1.4;
   }
 
-  /* ── HOW IT WORKS ─────────────────────────────────── */
   .section {
     padding: 100px 0;
     position: relative; z-index: 1;
@@ -446,7 +425,6 @@
     line-height: 1.6;
   }
 
-  /* ── FOR WHO ──────────────────────────────────────── */
   .who-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -514,7 +492,6 @@
     margin-top: 1px;
   }
 
-  /* ── FOUNDING MEMBER ──────────────────────────────── */
   .founding {
     padding: 100px 0;
     position: relative; z-index: 1;
@@ -582,10 +559,7 @@
     font-weight: 800;
     color: var(--sky);
   }
-  .price-label {
-    font-size: 0.85rem;
-    color: var(--muted);
-  }
+  .price-label { font-size: 0.85rem; color: var(--muted); }
   .price-cross {
     font-size: 1rem;
     color: var(--muted);
@@ -617,7 +591,6 @@
     font-weight: 700;
   }
   .price-btn {
-    display: block;
     width: 100%;
     padding: 13px;
     background: var(--sky);
@@ -647,21 +620,24 @@
   /* ── FOOTER ───────────────────────────────────────── */
   footer {
     border-top: 1px solid var(--border);
-    padding: 40px 0;
+    padding: 48px 0;
     position: relative; z-index: 1;
   }
   .footer-inner {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
   }
   .footer-copy {
     font-size: 0.8rem;
     color: var(--muted);
+    line-height: 1.9;
   }
   .footer-links {
     display: flex;
-    gap: 24px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
   }
   .footer-links a {
     font-size: 0.8rem;
@@ -671,7 +647,6 @@
   }
   .footer-links a:hover { color: var(--sky); }
 
-  /* ── ANIMATIONS ───────────────────────────────────── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -686,7 +661,6 @@
     transform: none;
   }
 
-  /* ── RESPONSIVE ───────────────────────────────────── */
   @media (max-width: 768px) {
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .steps-grid { grid-template-columns: repeat(2, 1fr); }
@@ -694,7 +668,8 @@
     .founding-inner { grid-template-columns: 1fr; padding: 36px 24px; gap: 32px; }
     .form-row { grid-template-columns: 1fr; }
     .form-card { padding: 24px; }
-    .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+    .footer-inner { flex-direction: column; gap: 24px; }
+    .footer-links { align-items: flex-start; }
   }
   @media (max-width: 480px) {
     .steps-grid { grid-template-columns: 1fr; }
@@ -704,12 +679,10 @@
 </head>
 <body>
 
-<!-- STARS -->
 <div id="stars"></div>
 <div class="orb orb-1"></div>
 <div class="orb orb-2"></div>
 
-<!-- NAV -->
 <nav>
   <div class="container">
     <a href="#" class="logo">Gal<span>Oo</span>rt</a>
@@ -717,7 +690,6 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero-inner">
@@ -725,25 +697,20 @@
         <span class="badge-dot"></span>
         Now accepting early access
       </div>
-
       <h1>
         India's Space Industry<br>
         Runs on <span class="accent">GalOort</span>
       </h1>
-
       <p class="hero-sub">
         The procurement infrastructure built for India's private space sector.
         <strong>Find verified suppliers, send RFQs, and manage your entire supply chain</strong>
         — in one place, instead of emails and spreadsheets.
       </p>
-
       <div class="waitlist-wrap" id="waitlist">
         <div class="tab-row">
           <button class="tab-btn active" onclick="switchTab('company', this)">I'm a Space Company</button>
           <button class="tab-btn" onclick="switchTab('supplier', this)">I'm a Supplier</button>
         </div>
-
-        <!-- Company Form -->
         <div class="form-card" id="form-company">
           <div class="form-row">
             <div class="field">
@@ -778,9 +745,7 @@
               <input type="text" placeholder="e.g. Finding certified suppliers for PCBs takes weeks">
             </div>
           </div>
-          <button class="submit-btn" onclick="submitForm('company')">
-            Join the Waitlist →
-          </button>
+          <button class="submit-btn" onclick="submitForm('company')">Join the Waitlist →</button>
           <p class="form-note">No spam. We'll reach out personally when we're ready for you.</p>
           <div class="success-msg" id="success-company">
             <div class="check">🚀</div>
@@ -788,8 +753,6 @@
             <p>We'll reach out personally. India's space ecosystem is about to get a lot more efficient.</p>
           </div>
         </div>
-
-        <!-- Supplier Form -->
         <div class="form-card" id="form-supplier" style="display:none">
           <div class="form-row">
             <div class="field">
@@ -832,9 +795,7 @@
               </select>
             </div>
           </div>
-          <button class="submit-btn" onclick="submitForm('supplier')">
-            Get Listed on GalOort →
-          </button>
+          <button class="submit-btn" onclick="submitForm('supplier')">Get Listed on GalOort →</button>
           <p class="form-note">Be discoverable to every space company in India from day one.</p>
           <div class="success-msg" id="success-supplier">
             <div class="check">⚡</div>
@@ -847,7 +808,6 @@
   </div>
 </section>
 
-<!-- STATS -->
 <section class="stats reveal">
   <div class="container">
     <div class="stats-grid">
@@ -871,7 +831,6 @@
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
 <section class="section reveal">
   <div class="container">
     <div class="section-tag">How it works</div>
@@ -907,7 +866,6 @@
   </div>
 </section>
 
-<!-- FOR WHO -->
 <section class="section reveal" style="padding-top:0">
   <div class="container">
     <div class="section-tag">Who it's for</div>
@@ -942,7 +900,6 @@
   </div>
 </section>
 
-<!-- FOUNDING MEMBER -->
 <section class="founding reveal">
   <div class="container">
     <div class="founding-inner">
@@ -964,25 +921,23 @@
           <li>Dedicated onboarding support</li>
           <li>Founding member badge on your profile</li>
         </ul>
-        <a href="#waitlist" class="price-btn">
-          Claim Your Spot →
-        </a>
+        <a href="#waitlist" class="price-btn">Claim Your Spot →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER — updated -->
 <footer>
   <div class="container">
     <div class="footer-inner">
       <div>
-        <div class="logo" style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:0.1em;margin-bottom:8px;">Gal<span style="color:var(--sky)">Oo</span>rt</div>
-        <div class="footer-copy" style="margin-bottom:4px;">India's Space Procurement Ecosystem</div>
-        <div class="footer-copy" style="margin-bottom:4px;">📍 Startup Park by iQue Ventures, Koramangala, Bengaluru</div>
-        <div class="footer-copy" style="margin-bottom:2px;">
-          <span style="color:var(--off);">Liya Eravath</span>
-          <span style="color:var(--muted);"> — Founder & CEO</span>
+        <div class="logo" style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:0.1em;margin-bottom:10px;">Gal<span style="color:var(--sky)">Oo</span>rt</div>
+        <div class="footer-copy">India's Space Procurement Ecosystem</div>
+        <div class="footer-copy">📍 Startup Park by iQue Ventures, Koramangala, Bengaluru</div>
+        <div class="footer-copy" style="margin-top:6px;">
+          <span style="color:var(--off);font-weight:500;">Liya Eravath</span>
+          <span> — Founder &amp; CEO</span>
         </div>
       </div>
       <div class="footer-links">
@@ -994,8 +949,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // ── STARS ──────────────────────────────────────────────
+<script>
   const starContainer = document.getElementById('stars');
   for (let i = 0; i < 160; i++) {
     const s = document.createElement('div');
@@ -1013,7 +967,6 @@
     starContainer.appendChild(s);
   }
 
-  // ── TABS ───────────────────────────────────────────────
   function switchTab(type, btn) {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
@@ -1021,7 +974,6 @@
     document.getElementById('form-supplier').style.display = type === 'supplier' ? 'block' : 'none';
   }
 
-  // ── SUBMIT ─────────────────────────────────────────────
   function submitForm(type) {
     const form = document.getElementById('form-' + type);
     const inputs = form.querySelectorAll('input, select');
@@ -1035,13 +987,19 @@
       }
     });
     if (!valid) return;
-
-    // Hide fields, show success
     form.querySelectorAll('.form-row, .submit-btn, .form-note').forEach(el => el.style.display = 'none');
     document.getElementById('success-' + type).style.display = 'block';
   }
 
-  // ── SCROLL REVEAL ──────────────────────────────────────
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIn
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
