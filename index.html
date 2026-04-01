@@ -977,18 +977,24 @@
   <div class="container">
     <div class="footer-inner">
       <div>
-        <div class="logo" style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:0.1em;margin-bottom:6px;">Gal<span style="color:var(--sky)">Oo</span>rt</div>
-        <div class="footer-copy">India's Space Procurement Ecosystem · Bengaluru, India</div>
+        <div class="logo" style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:0.1em;margin-bottom:8px;">Gal<span style="color:var(--sky)">Oo</span>rt</div>
+        <div class="footer-copy" style="margin-bottom:4px;">India's Space Procurement Ecosystem</div>
+        <div class="footer-copy" style="margin-bottom:4px;">📍 Startup Park by iQue Ventures, Koramangala, Bengaluru</div>
+        <div class="footer-copy" style="margin-bottom:2px;">
+          <span style="color:var(--off);">Liya Eravath</span>
+          <span style="color:var(--muted);"> — Founder & CEO</span>
+        </div>
       </div>
       <div class="footer-links">
-        <a href="mailto:hello@galoort.com">hello@galoort.com</a>
+        <a href="mailto:liya@galoort.com">liya@galoort.com</a>
+        <a href="https://www.linkedin.com/in/liyastellar" target="_blank">LinkedIn</a>
         <a href="#waitlist">Join Waitlist</a>
       </div>
     </div>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ── STARS ──────────────────────────────────────────────
   const starContainer = document.getElementById('stars');
   for (let i = 0; i < 160; i++) {
@@ -1038,13 +1044,4 @@
   // ── SCROLL REVEAL ──────────────────────────────────────
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
-</body>
-</html>
+      if (e.isIn
