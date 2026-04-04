@@ -941,7 +941,7 @@
         </div>
       </div>
       <div class="footer-links">
-        <a href="mailto:liya@galoort.com">liya@galoort.com</a>
+        <a href="/cdn-cgi/l/email-protection#4c2025352d0c2b2d2023233e38622f2321"><span class="__cf_email__" data-cfemail="6a0603130b2a0d0b060505181e44090507">[email&#160;protected]</span></a>
         <a href="https://www.linkedin.com/in/liyastellar" target="_blank">LinkedIn</a>
         <a href="#waitlist">Join Waitlist</a>
       </div>
@@ -949,7 +949,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const starContainer = document.getElementById('stars');
   for (let i = 0; i < 160; i++) {
     const s = document.createElement('div');
@@ -974,10 +974,11 @@
     document.getElementById('form-supplier').style.display = type === 'supplier' ? 'block' : 'none';
   }
 
-  function submitForm(type) {
+  async function submitForm(type) {
     const form = document.getElementById('form-' + type);
     const inputs = form.querySelectorAll('input, select');
     let valid = true;
+
     inputs.forEach(i => {
       if (i.value.trim() === '' || i.value === '') {
         i.style.borderColor = 'rgba(231,76,60,0.6)';
@@ -987,19 +988,33 @@
       }
     });
     if (!valid) return;
-    form.querySelectorAll('.form-row, .submit-btn, .form-note').forEach(el => el.style.display = 'none');
-    document.getElementById('success-' + type).style.display = 'block';
+
+    const data = {
+      _subject: 'New GalOort Waitlist Signup — ' + (type === 'company' ? 'Space Company' : 'Supplier'),
+      type: type === 'company' ? 'Space Company' : 'Supplier'
+    };
+    inputs.forEach(i => {
+      const label = i.closest('.field')?.querySelector('label')?.innerText || i.type;
+      data[label] = i.value;
+    });
+
+    try {
+      const res = await fetch('https://formspree.io/f/xgoplvkw', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+        form.querySelectorAll('.form-row, .submit-btn, .form-note').forEach(el => el.style.display = 'none');
+        document.getElementById('success-' + type).style.display = 'block';
+      } else {
+        alert('Something went wrong. Please try again or email liya@galoort.com directly.');
+      }
+    } catch (e) {
+      alert('Something went wrong. Please try again or email liya@galoort.com directly.');
+    }
   }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
-</body>
-</html>
+      if (e.isInte
